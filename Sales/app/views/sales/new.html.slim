@@ -1,0 +1,25 @@
+.container.text-center.my-3
+  h1 Nueva Venta
+.row
+  .col-md-6.m-auto
+    = form_with(model: @sale, local: true) do |f|
+      .field
+        = f.label :cod, "Codigo de venta"
+        = f.text_field :cod, class: 'form-control'
+      .field
+        = f.label :detail, "Detalle de venta"
+        = f.text_area :detail, class: 'form-control', rows: 4
+      .field
+        = f.label :category, "Categoria"
+        = f.text_field :category, class: 'form-control'
+      .field
+        = f.label :value, "Valor"
+        = f.text_field :value, class: 'form-control'
+      .field
+        = f.label :discount, "Descuento"
+        = f.text_field :discount, class: 'form-control'
+      .field
+        = f.label :tax, "Exento de IVA ?"
+        = f.check_box :tax, class: 'form-control'
+      .actions
+        = f.submit "Enviar", class: 'btn btn-primary form-control mt-5'

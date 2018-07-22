@@ -1,0 +1,39 @@
+.alert.alert-success
+  strong Felicitaciones!
+  |  La venta se realizo con exito.
+
+.container.text-center.my-3
+  h1 Detalles de Venta
+.row
+  .col-md-6.m-auto
+    table.table.table-striped.table-bordered
+      tbody
+        tr
+          td
+            code.sale Codigo de venta
+          td= @sale.cod
+        tr
+          td
+            code.sale Detalle de venta
+          td= @sale.detail
+        tr
+          td
+            code.sale Categoria
+          td= @sale.category
+        tr
+          td
+            code.sale Valor
+          td= @sale.value
+        tr
+          td
+            code.sale Descuento
+          td #{@sale.discount}%
+        tr
+          td
+            code.sale Exento de IVA
+          td= @iva
+        tr
+          td
+            code.sale Total
+          td= @sale.total
+    = link_to "Volver", sales_path, class: 'btn btn-success'
