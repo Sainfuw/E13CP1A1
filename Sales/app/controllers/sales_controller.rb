@@ -13,11 +13,11 @@ class SalesController < ApplicationController
                     @total
                   end
     @sale.save
-    redirect_to sales_done_path
+    redirect_to sale_path(@sale)
   end
 
   def done
-    @sale = Sale.last
+    @sale = Sale.find(params[:id])
     @iva = if @sale.tax.zero?
              "No"
            else
